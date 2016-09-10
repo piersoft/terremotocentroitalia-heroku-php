@@ -1,4 +1,6 @@
 <?php
+	die("To be fixed.");
+
 	define('GITHUB_REPO', 'git@github.com:emergenzeHack/terremotocentro.git');
 	define('GITLAB_REPO', 'https://' . getenv('GITLAB_AUTH') . '@gitlab.com/emergenzeHack/terremotocentro');
 
