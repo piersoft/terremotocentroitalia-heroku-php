@@ -47,8 +47,8 @@ data: $date</yamldata></pre>",
         );
         $data_string = json_encode($data);
         $agent = 'Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/52.0.2743.82 Safari/537.36';
-        $username = '[USERNAME]';
-        $password = '[PASSWORD]';
+        $username = getenv('GITHUB_USERNAME');
+        $password = getenv('GITHUB_PASSWORD');
         $ch = curl_init();
         curl_setopt($ch, CURLOPT_URL, 'https://api.github.com/repos/emergenzeHack/terremotocentro_segnalazioni/issues');
         curl_setopt($ch, CURLOPT_CUSTOMREQUEST, "POST");
@@ -639,7 +639,7 @@ body{background-color:#ddf0e6}.mso h1{}.mso h1{font-family:sans-serif !important
           </div>
         <!--[if (mso)|(IE)]></td><td style=\"width: 280px\" valign=\"top\"><![endif]-->
           <div class=\"webversion\" style='display: table-cell;Float: left;font-size: 12px;line-height: 19px;max-width: 280px;min-width: 139px; width: 139px;width: calc(14100% - 78680px);padding: 10px 0 5px 0;text-align: right;color: #47805e;font-family: \"PT Sans\",\"Trebuchet MS\",sans-serif;'>
-            <p style=\"Margin-top: 0;Margin-bottom: 0;\"><webversion style=\"text-decoration: underline;\"><a href=\"https://terremoto.francescopinzauti.com/email/\">Versione web</a></webversion></p>
+            <p style=\"Margin-top: 0;Margin-bottom: 0;\"><webversion style=\"text-decoration: underline;\"><a href=\"https://terremotocentroitalia.herokuapp.com/segnalazioni/email/\">Versione web</a></webversion></p>
           </div>
         <!--[if (mso)|(IE)]></td></tr></table><![endif]-->
         </div>
@@ -647,7 +647,7 @@ body{background-color:#ddf0e6}.mso h1{}.mso h1{font-family:sans-serif !important
       <div class=\"header\" style=\"Margin: 0 auto;max-width: 600px;min-width: 320px; width: 320px;width: calc(28000% - 173000px);\" id=\"emb-email-header-container\">
       <!--[if (mso)|(IE)]><table align=\"center\" class=\"header\" cellpadding=\"0\" cellspacing=\"0\"><tr><td style=\"width: 600px\"><![endif]-->
         <div class=\"logo emb-logo-margin-box\" style=\"font-size: 26px;line-height: 32px;Margin-top: 6px;Margin-bottom: 20px;color: #41637e;font-family: Avenir,sans-serif;Margin-left: 20px;Margin-right: 20px;\" align=\"center\">
-          <div class=\"logo-center\" style=\"font-size:0px !important;line-height:0 !important;\" align=\"center\" id=\"emb-email-header\"><a style=\"text-decoration: none;transition: opacity 0.1s ease-in;color: #41637e;\" href=\"http://terremotocentroitalia.info/\"><img style=\"height: auto;width: 100%;border: 0;max-width: 103px;\" src=\"https://terremoto.francescopinzauti.com/email/logo.png\" alt=\"Terremoto Centro Italia\" width=\"103\" /></a></div>
+          <div class=\"logo-center\" style=\"font-size:0px !important;line-height:0 !important;\" align=\"center\" id=\"emb-email-header\"><a style=\"text-decoration: none;transition: opacity 0.1s ease-in;color: #41637e;\" href=\"http://terremotocentroitalia.info/\"><img style=\"height: auto;width: 100%;border: 0;max-width: 103px;\" src=\"https://terremotocentroitalia.herokuapp.com/segnalazioni/email/logo.png\" alt=\"Terremoto Centro Italia\" width=\"103\" /></a></div>
         </div>
       <!--[if (mso)|(IE)]></td></tr></table><![endif]-->
       </div>
@@ -662,7 +662,7 @@ body{background-color:#ddf0e6}.mso h1{}.mso h1{font-family:sans-serif !important
         
             <div style=\"Margin-left: 20px;Margin-right: 20px;\">
         <div style=\"font-size: 12px;font-style: normal;font-weight: normal;Margin-bottom: 20px;\" align=\"center\">
-          <img style=\"border: 0;display: block;height: auto;width: 100%;max-width: 851px;\" alt=\"\" width=\"560\" src=\"https://terremoto.francescopinzauti.com/email/terremoto.jpg\" />
+          <img style=\"border: 0;display: block;height: auto;width: 100%;max-width: 851px;\" alt=\"\" width=\"560\" src=\"https://terremotocentroitalia.herokuapp.com/segnalazioni/email/terremoto.jpg\" />
         </div>
       </div>
         

@@ -32,8 +32,8 @@ data: $date</yamldata></pre>",
         );
         $data_string = json_encode($data);
         $agent = 'Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/52.0.2743.82 Safari/537.36';
-        $username = '[USERNAME]';
-        $password = '[PASSWORD]';
+        $username = getenv('GITHUB_USERNAME');
+        $password = getenv('GITHUB_PASSWORD');
         $ch = curl_init();
         curl_setopt($ch, CURLOPT_URL, 'https://api.github.com/repos/emergenzeHack/terremotocentro_segnalazioni/issues');
         curl_setopt($ch, CURLOPT_CUSTOMREQUEST, "POST");
