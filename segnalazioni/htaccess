@@ -1,0 +1,66 @@
+AddHandler application/x-httpd-php70 .php .php5 .php4 .php3
+
+RewriteEngine On
+RewriteBase /
+
+
+# Errori
+ErrorDocument 400 /error/error.shtml
+ErrorDocument 401 /error/error.shtml
+ErrorDocument 402 /error/error.shtml
+ErrorDocument 403 /error/error.shtml
+ErrorDocument 404 /error/error.shtml
+ErrorDocument 500 /error/error.shtml
+
+#Redriect
+RewriteRule ^fondi$ fondi.html [L]
+RewriteRule ^donazioni$ donazioni.html [L]
+RewriteRule ^alloggi$ alloggi.html [L]
+RewriteRule ^notizie$ notizie.html [L]
+RewriteRule ^fabbisogni$ fabbisogni.html [L]
+RewriteRule ^contatti$ contatti.html [L]
+RewriteRule ^csv/contatti.csv$ csv/php/contatti.csv [L]
+RewriteRule ^csv/alloggi.csv$ csv/php/alloggi.csv [L]
+RewriteRule ^csv/donazioni.csv$ csv/php/donazioni.csv [L]
+RewriteRule ^csv/fabbisogni.csv$ csv/php/fabbisogni.csv [L]
+
+# Selected redirect
+Redirect 301 /fondi/ /fondi
+Redirect 301 /donazioni/ /donazioni
+Redirect 301 /alloggi/ /alloggi
+Redirect 301 /notizie/ /notizie
+Redirect 301 /fabbisogni/ /fabbisogni
+Redirect 301 /contatti/ /contatti
+
+<IfModule mod_headers.c>
+Header set Connection keep-alive
+</IfModule>
+
+# Abilita l'Expires ed imposta il default to 0
+ExpiresActive On
+ExpiresDefault A0
+
+# Imposta la cache dei file multimediali ad 1 anno
+<FilesMatch "\.(flv|ico|pdf|avi|mov|ppt|doc|mp3|wmv|wav)$">
+ExpiresDefault A29030400
+Header append Cache-Control "public"
+</FilesMatch>
+
+# Imposta la cache delle immagini a 1 settimana
+<FilesMatch "\.(gif|jpg|jpeg|png|swf)$">
+ExpiresDefault A604800
+Header append Cache-Control "public"
+</FilesMatch>
+
+# Imposta la cache delle risorse aggiornate di frequente a 1 Settimana (Da aggiornare a 2 ore)
+<FilesMatch "\.(xml|txt|html|js|css)$">
+ExpiresDefault A604800
+Header append Cache-Control "proxy-revalidate"
+</FilesMatch>
+
+# Forza la disabilitazione della cache per le risorse dinamiche
+<FilesMatch "\.(php|cgi|pl|htm)$">
+ExpiresActive Off
+Header set Cache-Control "private, no-cache, no-store, proxy-revalidate, no-transform"
+Header set Pragma "no-cache"
+</FilesMatch>

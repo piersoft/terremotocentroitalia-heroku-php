@@ -1,0 +1,199 @@
+@import url(https://fonts.googleapis.com/css?family=Roboto:400,300,600,400italic);
+
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    -webkit-box-sizing: border-box;
+    -moz-box-sizing: border-box;
+    -webkit-font-smoothing: antialiased;
+    -moz-font-smoothing: antialiased;
+    -o-font-smoothing: antialiased;
+    font-smoothing: antialiased;
+    text-rendering: optimizeLegibility;
+}
+
+body {
+    font-family: "Roboto", Helvetica, Arial, sans-serif;
+    font-weight: 100;
+    font-size: 12px;
+    line-height: 30px;
+    color: #777;
+    background: #f5f5f5;
+}
+
+main {
+    max-width: 800px;
+    width: 100%;
+    margin: 0 auto;
+    position: relative;
+}
+
+.terremoto input,
+.terremoto select,
+.terremoto textarea,
+.terremoto button[type="submit"] {
+    font: 400 12px/16px "Roboto", Helvetica, Arial, sans-serif;
+}
+
+.terremoto {
+    background: #F9F9F9;
+    padding: 25px;
+    margin: 5% 0;
+    box-shadow: 0 0 20px 0 rgba(0, 0, 0, 0.2), 0 5px 5px 0 rgba(0, 0, 0, 0.24);
+}
+
+.terremoto h3 {
+    display: block;
+    font-size: 30px;
+    font-weight: 300;
+    margin-bottom: 10px;
+}
+
+.terremoto h4 {
+    margin: 5px 0 15px;
+    display: block;
+    font-size: 13px;
+    font-weight: 400;
+}
+
+.terremoto input,
+.terremoto select,
+.terremoto textarea {
+    width: 100%;
+    border: 1px solid #ccc;
+    background: #FFF;
+    margin: 0 0 10px;
+    padding: 10px;
+
+}
+
+.terremoto input:hover,
+.terremoto select:hover,
+.terremoto textarea:hover {
+    -webkit-transition: border-color 0.3s ease-in-out;
+    -moz-transition: border-color 0.3s ease-in-out;
+    transition: border-color 0.3s ease-in-out;
+    border: 1px solid #aaa;
+}
+
+.terremoto textarea {
+    height: 100px;
+    max-width: 100%;
+    resize: none;
+    margin-top: 8px;
+}
+
+.terremoto button[type="submit"] {
+    cursor: pointer;
+    width: 100%;
+    border: none;
+    background: #4CAF50;
+    color: #FFF;
+    margin: 5px 0 0 0;
+    padding: 10px;
+    font-size: 15px;
+}
+
+.terremoto button[type="submit"]:hover {
+    background: #43A047;
+    -webkit-transition: background 0.3s ease-in-out;
+    -moz-transition: background 0.3s ease-in-out;
+    transition: background-color 0.3s ease-in-out;
+}
+
+.terremoto button[type="submit"]:active {
+    box-shadow: inset 0 1px 3px rgba(0, 0, 0, 0.5);
+}
+
+#result {
+    text-align: center;
+    font-size: 1.2em;
+    margin-top: 10px;
+}
+
+.terremoto input:focus,
+.terremoto select:focus,
+.terremoto textarea:focus {
+    outline: 0;
+    border: 1px solid #aaa;
+}
+
+::-webkit-input-placeholder {
+    color: #888;
+}
+
+:-moz-placeholder {
+    color: #888;
+}
+
+::-moz-placeholder {
+    color: #888;
+}
+
+:-ms-input-placeholder {
+    color: #888;
+}
+
+.terremoto > p > img {
+    margin: 3% 45% 0 45%;
+    visibility: hidden;
+}
+
+@media only screen and (max-width: 55em) {
+    .terremoto {
+        margin: 2%;
+    }
+
+}
+
+.home {
+    font-size: 1.4em;
+    margin: 10px 0;
+    text-align:center;
+
+}
+
+h4 a, .link {
+    text-decoration: none;
+    border: none;
+    color: #4CAF50;
+    margin: 0 0 5px;
+    font-size: 15px;
+}
+
+h4 a:hover, .link:hover {
+    color: #43A047;
+}
+
+#map {
+    width: 100%;
+    height: 20rem;
+    margin-bottom: 20px;
+}
+
+#resulth {
+    text-align: center;
+    font-size: 1.2em;
+    margin-top: 15px;
+}
+
+.start {
+    max-width:450px;
+    margin:2% auto;
+}
+.search-input {
+    font-family: Courier
+}
+.search-input,
+.leaflet-control-search {
+    max-width:400px;
+}
+
+#maplecce {
+
+}
+#map {
+   width:100%;
+    height:40em;
+}
