@@ -151,7 +151,6 @@ main {
     font-size: 1.4em;
     margin: 10px 0;
     text-align:center;
-
 }
 
 h4 a, .link {
@@ -168,7 +167,7 @@ h4 a:hover, .link:hover {
 
 #map {
     width: 100%;
-    height: 20rem;
+    height: 40rem;
     margin-bottom: 20px;
 }
 
@@ -181,19 +180,5 @@ h4 a:hover, .link:hover {
 .start {
     max-width:450px;
     margin:2% auto;
-}
-.search-input {
-    font-family: Courier
-}
-.search-input,
-.leaflet-control-search {
-    max-width:400px;
-}
-
-#maplecce {
-
-}
-#map {
-   width:100%;
-    height:40em;
+    word-wrap: break-word;
 }
