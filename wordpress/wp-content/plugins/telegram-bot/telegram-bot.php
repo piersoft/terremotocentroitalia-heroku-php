@@ -411,8 +411,8 @@ function telegram_download_file( $telegram_user_id, $file_id, $directory = '' ) 
 	$ext = pathinfo($remote_url, PATHINFO_EXTENSION);
 	$file_name = time().'.'.$ext;
 	$local_url = $local_dir.'/'.$file_name;
+	mkdir( $local_dir, 0755, true);
 	if ( !copy( $remote_url, $local_url) ) {
-		mkdir( $local_dir, 0755, true);
 		if ( !copy( $remote_url, $local_url) ) {
 			telegram_log('', $telegram_user_id, 'Cannot write file image from '.$remove_url.' to '.$local_url);
 			return false;
