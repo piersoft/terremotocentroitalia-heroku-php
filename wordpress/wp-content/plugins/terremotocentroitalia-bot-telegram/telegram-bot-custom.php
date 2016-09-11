@@ -198,7 +198,7 @@ function telegram_create_github_issue( $arr ) {
   $options = array(
     'http' => array(
       'method'  => 'POST',
-      'header'  => "Content-Type: application/json\r\n"."Authorization: Basic ".base64_encode( "milesimarco:<TOKEN>" )."\r\n",
+      'header'  => "Content-Type: application/json\r\n"."Authorization: Basic ".base64_encode( getenv("GITHUB_USERNAME").":".getenv("GITHUB_PASSWORD") )."\r\n",
       'content' => json_encode( $data )
       )
   );
