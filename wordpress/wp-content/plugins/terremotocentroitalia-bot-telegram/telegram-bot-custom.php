@@ -182,18 +182,34 @@ function telegramcustom_send_check() {
 function telegram_create_github_issue( $arr ) {
 
   $title = $arr['description'];
-  if ( $arr['url'] ) {
-    $body .= '!['.$arr['description'].']('.$arr['url'].')'.PHP_EOL;
-  }
-  $body .= '{ "lat": '.$arr["lat"].', "lon": '.$arr["lon"].', "wordpress_id": '.$arr["wordpress_id"].', "telegram_username": '.$arr["telegram_username"].' }';
+  #if ( $arr['url'] ) {
+  #  $body .= '!['.$arr['description'].']('.$arr['url'].')'.PHP_EOL;
+  #}
+  #$body .= '{ "lat": '.$arr["lat"].', "lon": '.$arr["lon"].', "wordpress_id": '.$arr["wordpress_id"].', "telegram_username": '.$arr["telegram_username"].' }';
 
-  $body .= PHP_EOL.'[Link Mappa](http://www.piersoft.it/terremotocentro/#20/'.$arr['lat'].'/'.$arr['lon'].')';
+  #$body .= PHP_EOL.'[Link Mappa](http://www.piersoft.it/terremotocentro/#20/'.$arr['lat'].'/'.$arr['lon'].')';
 
   $data = array(
-    'title' => $title,
-    'body' => $body,
-    'labels' => array( 'Telegram' )
+      "title" => $title,
+      "body" => "<pre><yamldata>nome: $arr["telegram_username"]
+tel:
+email:
+descrizione: $arr['description']
+indirizzo:
+lat: $arr["lat"]
+lon: $arr["lon"]
+link:
+data: $date</yamldata></pre>",
+      "labels" => [
+          "Telegram"
+      ]
   );
+
+#  $data = array(
+#    'title' => $title,
+#    'body' => $body,
+#    'labels' => array( 'Telegram' )
+#  );
 
   $options = array(
     'http' => array(
