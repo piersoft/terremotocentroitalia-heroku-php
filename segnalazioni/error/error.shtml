@@ -20,8 +20,8 @@
 <body>
 <main>
     <div class="terremoto">
-        <h3>Errore <!--#echo var="REDIRECT_STATUS" -->!</h3>
-        <h4>Purtroppo <!--#echo var="REQUEST_URI" --> non è disponibile, <br>È possibile che il link che hai seguito sia corrotto o che la pagina sia stata rimossa.</h4>
+        <h3>Pagina non disponibile</h3>
+        <h4>Purtroppo la pagina richiesta non è disponibile, <br>È possibile che il link che hai seguito sia corrotto o che la pagina sia stata rimossa.</h4>
         <button onclick="history.go(-1)" type="submit">Torna indietro</button>
     </div>
 </main>
