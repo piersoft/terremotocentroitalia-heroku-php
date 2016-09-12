@@ -3,18 +3,18 @@
 <head>
     <meta charset="UTF-8">
     <title>Errore <!--#echo var="REDIRECT_STATUS" --> | Terremoto Centro Italia</title>
-    <link rel="stylesheet" href="/css/style.css">
+    <link rel="stylesheet" href="https://terremotocentroitalia.herokuapp.com/segnalazioni/css/style.css">
     <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1">
     <meta name="robots" content="noindex, nofollow">
-    <link rel="apple-touch-icon" sizes="180x180" href="/images/apple-touch-icon.png">
-    <link rel="icon" type="image/png" href="/images/favicon-32x32.png" sizes="32x32">
-    <link rel="icon" type="image/png" href="/images/favicon-16x16.png" sizes="16x16">
-    <link rel="manifest" href="/images/manifest.json">
-    <link rel="mask-icon" href="/images/safari-pinned-tab.svg" color="#000000">
-    <link rel="shortcut icon" href="/images/favicon.ico">
+    <link rel="apple-touch-icon" sizes="180x180" href="https://terremotocentroitalia.herokuapp.com/segnalazioni/images/apple-touch-icon.png">
+    <link rel="icon" type="image/png" href="https://terremotocentroitalia.herokuapp.com/segnalazioni/images/favicon-32x32.png" sizes="32x32">
+    <link rel="icon" type="image/png" href="https://terremotocentroitalia.herokuapp.com/segnalazioni/images/favicon-16x16.png" sizes="16x16">
+    <link rel="manifest" href="https://terremotocentroitalia.herokuapp.com/segnalazioni/images/manifest.json">
+    <link rel="mask-icon" href="https://terremotocentroitalia.herokuapp.com/segnalazioni/images/safari-pinned-tab.svg" color="#000000">
+    <link rel="shortcut icon" href="https://terremotocentroitalia.herokuapp.com/segnalazioni/images/favicon.ico">
     <meta name="apple-mobile-web-app-title" content="Segnalazioni Terremoto">
     <meta name="application-name" content="Segnalazioni Terremoto">
-    <meta name="msapplication-config" content="/images/browserconfig.xml">
+    <meta name="msapplication-config" content="https://terremotocentroitalia.herokuapp.com/segnalazioni/images/browserconfig.xml">
     <meta name="theme-color" content="#4caf50">
 </head>
 <body>
