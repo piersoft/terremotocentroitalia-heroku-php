@@ -5,7 +5,6 @@
 	$token = getenv('WEBHOOKS_TOKEN');
 //	if (!$token || $_GET['token'] != $token || ($_GET['type'] != 'csv' && $_GET['type'] != 'sync')) { FIXME
 	if (!$token || $_GET['token'] != $token || $_GET['type'] != 'issue') {
-		header("HTTP/1.1 401 Unauthorized");
 		exit;
 	}
 	$ssh_key = getenv('GITHUB_TERREMOTOCENTRO_SSH_KEY');
