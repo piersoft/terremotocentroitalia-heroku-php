@@ -6,12 +6,12 @@ RewriteRule .* https://%{HTTP_HOST}%{REQUEST_URI} [R,L]
 SetEnv HTTPS "on"
 
 # Errori
-ErrorDocument 400 /segnalazioni/error/error.shtml
-ErrorDocument 401 /segnalazioni/error/error.shtml
-ErrorDocument 402 /segnalazioni/error/error.shtml
-ErrorDocument 403 /segnalazioni/error/error.shtml
-ErrorDocument 404 /segnalazioni/error/error.shtml
-ErrorDocument 500 /segnalazioni/error/error.shtml
+ErrorDocument 400 /segnalazioni/error/error.html
+ErrorDocument 401 /segnalazioni/error/error.html
+ErrorDocument 402 /segnalazioni/error/error.html
+ErrorDocument 403 /segnalazioni/error/error.html
+ErrorDocument 404 /segnalazioni/error/error.html
+ErrorDocument 500 /segnalazioni/error/error.html
 
 #Redriect
 RewriteRule ^segnalazioni/fondi$ segnalazioni/fondi.html [L]
