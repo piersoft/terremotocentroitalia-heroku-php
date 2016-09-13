@@ -17,16 +17,6 @@ if (in_array('curl', get_loaded_extensions())) {
         $causale = strip_tags(trim($_POST["causale"]));
         $link = strip_tags(trim($_POST["link"]));
         $email = strip_tags(trim($_POST["email"]));
-        $email = str_replace(':', '%3A', $email);
-        $chi = str_replace(':', '%3A', $chi);
-        $descrizione = str_replace(':', '%3A', $descrizione);
-        $descrizione = str_replace('http%3A', 'http:', $descrizione);
-        $descrizione = str_replace('https%3A', 'https:', $descrizione);
-        $intestazione = str_replace(':', '%3A', $intestazione);
-        $iban = str_replace(':', '%3A', $iban);
-        $bic = str_replace(':', '%3A', $bic);
-        $postale = str_replace(':', '%3A', $postale);
-        $causale = str_replace(':', '%3A', $causale);
         $date = date('d/m/Y');
         if (empty($chi)) {
             http_response_code(400);

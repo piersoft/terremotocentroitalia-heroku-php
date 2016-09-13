@@ -18,14 +18,6 @@ if (in_array('curl', get_loaded_extensions())) {
         $lat = strip_tags(trim($_POST["lat"]));
         $lon = strip_tags(trim($_POST["lon"]));
         $date = date('d/m/Y');
-        $tel = str_replace(':', '%3A', $tel);
-        $email = str_replace(':', '%3A', $email);
-        $descrizione = str_replace(':', '%3A', $descrizione);
-        $descrizione = str_replace('http%3A', 'http:', $descrizione);
-        $descrizione = str_replace('https%3A', 'https:', $descrizione);
-        $indirizzo = str_replace(':', '%3A', $indirizzo);
-        $lat = str_replace(':', '%3A', $lat);
-        $lon = str_replace(':', '%3A', $lon);
         if (empty($descrizione)) {
             http_response_code(400);
             echo "Compila tutti i campi!";

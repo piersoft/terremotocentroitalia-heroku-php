@@ -17,15 +17,6 @@ if (in_array('curl', get_loaded_extensions())) {
         $link = strip_tags(trim($_POST["link"]));
         $lat = strip_tags(trim($_POST["lat"]));
         $lon = strip_tags(trim($_POST["lon"]));
-        $tel = str_replace(':', '%3A', $tel);
-        $email = str_replace(':', '%3A', $email);
-        $cosa = str_replace(':', '%3A', $cosa);
-        $descrizione = str_replace(':', '%3A', $descrizione);
-        $descrizione = str_replace('http%3A', 'http:', $descrizione);
-        $descrizione = str_replace('https%3A', 'https:', $descrizione);
-        $indirizzo = str_replace(':', '%3A', $indirizzo);
-        $lat = str_replace(':', '%3A', $lat);
-        $lon = str_replace(':', '%3A', $lon);
         $date = date('d/m/Y');
         if (empty($cosa)) {
             http_response_code(400);

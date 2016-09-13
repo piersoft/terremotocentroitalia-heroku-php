@@ -11,10 +11,6 @@ if (in_array('curl', get_loaded_extensions())) {
         $descrizione = strip_tags(trim($_POST["descrizione"]));
         $descrizione = trim(preg_replace('/\s\s+/', ' ', $descrizione));
         $link = strip_tags(trim($_POST["link"]));
-        $titolo = str_replace(':', '%3A', $titolo);
-        $descrizione = str_replace(':', '%3A', $descrizione);
-        $descrizione = str_replace('http%3A', 'http:', $descrizione);
-        $descrizione = str_replace('https%3A', 'https:', $descrizione);
         $date = date('d/m/Y');
         if (empty($titolo)) {
             http_response_code(400);
