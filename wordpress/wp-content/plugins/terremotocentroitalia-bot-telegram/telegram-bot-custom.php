@@ -208,7 +208,7 @@ function telegram_create_github_issue( $arr ) {
 
   $data = array(
     'title' => $title,
-    'body' => "<pre><yamldata>Telegram user: $user
+    'body' => "<pre><yamldata>Telegram_user: $user
 descrizione: $title
 immagine: $url
 lat: $lat
