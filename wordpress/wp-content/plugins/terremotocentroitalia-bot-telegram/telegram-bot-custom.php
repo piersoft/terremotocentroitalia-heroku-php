@@ -61,7 +61,6 @@ function telegramcustom_parse( $telegram_user_id, $text ) {
       telegramcustom_send_check();
 
     } else if ( $text == 'info' || $text == '/help' ) {
-      telegram_sendmessage( $telegram_user_id, 'Bot creato per http://terremotocentroitalia.info/'.PHP_EOL.'Privacy policy: http://terremotocentroitalia.info/legal_segnalazioni/'.PHP_EOL.'Per info e suggerimenti: @Milmor');
       delete_post_meta( $plugin_post_id, 'telegram_custom_description' );
       delete_post_meta( $plugin_post_id, 'telegram_custom_state' );
       delete_post_meta( $plugin_post_id, 'telegram_last_latitude' );
