@@ -1,6 +1,20 @@
 {
+    "repositories":[
+        {
+            "type":"composer",
+            "url":"https://wpackagist.org"
+        }
+    ],
     "require": {
         "ext-mbstring": "*",
-        "symfony/yaml": "*"
+        "symfony/yaml": "*",
+
+        "wpackagist-plugin/sendgrid-email-delivery-simplified": "~1"
+    },
+    "extra": {
+        "installer-paths": {
+            "wordpress/wp-content/plugins/{$name}/": ["type:wordpress-plugin"],
+            "wordpress/wp-content/themes/{$name}/": ["type:wordpress-theme"]
+        }
     }
 }

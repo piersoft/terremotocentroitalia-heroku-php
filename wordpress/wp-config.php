@@ -68,6 +68,15 @@ define('NONCE_SALT',       getenv('NONCE_SALT'));
 $table_prefix  = 'wp_';
 
 /**
+ * SendGrid settings.
+ */
+if ( !empty( $_ENV['SENDGRID_USERNAME'] ) && !empty( $_ENV['SENDGRID_PASSWORD'] ) ) {
+	define( 'SENDGRID_AUTH_METHOD', 'credentials'              );
+	define( 'SENDGRID_USERNAME',    $_ENV['SENDGRID_USERNAME'] );
+	define( 'SENDGRID_PASSWORD',    $_ENV['SENDGRID_PASSWORD'] );
+}
+
+/**
  * For developers: WordPress debugging mode.
  *
  * Change this to true to enable the display of notices during development.

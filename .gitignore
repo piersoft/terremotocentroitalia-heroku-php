@@ -1,1 +1,4 @@
 segnalazioni/.idea/
+
+# Mantenuto con compose.json
+wordpress/wp-content/plugins/sendgrid-email-delivery-simplified/
