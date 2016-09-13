@@ -1,5 +1,6 @@
 <?php
-require 'libreria.php';
+require_once(getenv('HOME') . '/vendor/autoload.php');
+require_once('libreria.php');
 if (in_array('curl', get_loaded_extensions())) {
     error_reporting(0);
     set_time_limit(120);
@@ -34,18 +35,22 @@ if (in_array('curl', get_loaded_extensions())) {
         $file = $_FILES["image"]["tmp_name"];
         $immagine = carica_file($_FILES["image"]);
 
+        $body = array(
+          'tel'         => $tel,
+          'email'       => $email,
+          'cosa'        => $cosa,
+          'descrizione' => $descrizione,
+          'indirizzo'   => $indirizzo,
+          'lat'         => $lat,
+          'lon'         => $lon,
+          'link'        => $link,
+          'immagine'    => $immagine,
+          'data'        => $date
+        );
+        $yaml = Yaml::dump($body);
         $data = array(
             "title" => $cosa,
-            "body" => "<pre><yamldata>tel: $tel
-email: $email
-cosa: $cosa
-descrizione: $descrizione
-indirizzo: $indirizzo
-lat: $lat
-lon: $lon
-link: $link
-immagine: $immagine
-data: $date</yamldata></pre>",
+            "body" => "<pre><yamldata>$yaml</yamldata></pre>",
             "labels" => [
                 "Fabbisogni",
                 "Form"

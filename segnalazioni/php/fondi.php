@@ -1,4 +1,5 @@
 <?php
+require_once(getenv('HOME') . '/vendor/autoload.php');
 if (in_array('curl', get_loaded_extensions())) {
     error_reporting(0);
     set_time_limit(120);
@@ -31,18 +32,23 @@ if (in_array('curl', get_loaded_extensions())) {
             echo "Compila tutti i campi!";
             exit;
         }
+
+        $body = array(
+          'chi'           => $chi,
+          'descrizione'   => $descrizione,
+          'intestazione'  => $intestazione,
+          'iban'          => $iban,
+          'bic'           => $bic,
+          'postale'       => $postale,
+          'causale'       => $causale,
+          'link'          => $link,
+          'email'         => $email,
+          'data'          => $date
+        );
+        $yaml = Yaml::dump($body);
         $data = array(
             "title" => $chi,
-            "body" => "<pre><yamldata>chi: $chi
-descrizione: $descrizione
-intestazione: $intestazione
-iban: $iban
-bic: $bic
-postale: $postale
-causale: $causale
-link: $link
-email: $email
-data: $date</yamldata></pre>",
+            "body" => "<pre><yamldata>$yaml</yamldata></pre>",
             "labels" => [
                 "Raccolte Fondi",
                 "Form"

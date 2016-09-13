@@ -6,6 +6,10 @@ Author: My name
 Version: 1
 */
 
+require_once(getenv('HOME') . '/vendor/autoload.php');
+
+use Symfony\Component\Yaml\Yaml;
+
 add_action('telegram_parse','telegramcustom_parse', 10, 2);
 
 function telegramcustom_parse( $telegram_user_id, $text ) {
@@ -206,15 +210,21 @@ function telegram_create_github_issue( $arr ) {
   $user = $arr["telegram_username"];
   $date = date('d/m/Y');
 
+  $body = array(
+    'telegram_user' => $user,
+    'descrizione'   => $title,
+    'immagine'      => $url,
+    'lat'           => $lat,
+    'lon'           => $lon,
+    'data'          => $date
+  );
+
+  $yaml = Yaml::dump($body);
+
   $data = array(
-    'title' => $title,
-    'body' => "<pre><yamldata>Telegram_user: $user
-descrizione: $title
-immagine: $url
-lat: $lat
-lon: $lon
-data: $date</yamldata></pre>",
-    'labels' => array( 'Telegram' )
+    'title'   => substr($title, 0, 30),
+    'body'    => "<pre><yamldata>$yaml</yamldata></pre>",
+    'labels'  => array( 'Telegram' )
   );
 
   $options = array(

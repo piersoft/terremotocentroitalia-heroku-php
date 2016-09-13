@@ -1,4 +1,5 @@
 <?php
+require_once(getenv('HOME') . '/vendor/autoload.php');
 if (in_array('curl', get_loaded_extensions())) {
     error_reporting(0);
     set_time_limit(120);
@@ -19,12 +20,16 @@ if (in_array('curl', get_loaded_extensions())) {
             echo "Compila tutti i campi!";
             exit;
         }
+        $body = array(
+          'titolo'      => $titolo,
+          'descrizione' => $descrizione,
+          'link'        => $link,
+          'data'        => $date
+        );
+        $yaml = Yaml::dump($body);
         $data = array(
             "title" => $titolo,
-            "body" => "<pre><yamldata>titolo: $titolo
-descrizione: $descrizione
-link: $link
-data: $date</yamldata></pre>",
+            "body" => "<pre><yamldata>$yaml</yamldata></pre>",
             "labels" => [
                 "Notizie Utili",
                 "Form"
