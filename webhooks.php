@@ -18,7 +18,7 @@
 
 	$token = getenv('WEBHOOKS_TOKEN');
 //	if (!$token || $_GET['token'] != $token || ($_GET['type'] != 'csv' && $_GET['type'] != 'sync')) { FIXME
-	if (!$token || $_GET['token'] != $token || $_GET['type'] != 'issue') {
+	if (!$token || $_GET['token'] != $token || ($_GET['type'] != 'sync' && $_GET['type'] != 'issue')) {
 		exit;
 	}
 
