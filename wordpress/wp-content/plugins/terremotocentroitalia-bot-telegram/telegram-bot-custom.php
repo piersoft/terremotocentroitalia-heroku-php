@@ -210,6 +210,9 @@ function telegram_create_github_issue( $arr ) {
   $user = $arr["telegram_username"];
   $date = date('d/m/Y');
 
+  if ($url === NULL)
+    $url = '';
+
   $body = array(
     'telegram_user' => $user,
     'descrizione'   => $title,
