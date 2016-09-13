@@ -182,16 +182,20 @@ function telegramcustom_send_check() {
 function telegram_create_github_issue( $arr ) {
 
   $title = $arr['description'];
-  if ( $arr['url'] ) {
-    $body .= '!['.$arr['description'].']('.$arr['url'].')'.PHP_EOL;
-  }
-  $body .= '{ "lat": '.$arr["lat"].', "lon": '.$arr["lon"].', "wordpress_id": '.$arr["wordpress_id"].', "telegram_username": '.$arr["telegram_username"].' }';
-
-  $body .= PHP_EOL.'[Link Mappa](http://www.piersoft.it/terremotocentro/#20/'.$arr['lat'].'/'.$arr['lon'].')';
+  $url = $arr['url'];
+  $lat = $arr["lat"];
+  $lon = $arr["lon"];
+  $user = $arr["telegram_username"];
+  $date = date('d/m/Y');
 
   $data = array(
     'title' => $title,
-    'body' => $body,
+    'body' => "<pre><yamldata>Telegram user: $user
+descrizione: $title
+immagine: $url
+lat: $lat
+lon: $lon
+data: $date</yamldata></pre>",
     'labels' => array( 'Telegram' )
   );
 
