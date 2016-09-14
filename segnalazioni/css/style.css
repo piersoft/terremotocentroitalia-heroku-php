@@ -29,13 +29,7 @@ main {
     position: relative;
 }
 
-.terremoto input[type=text],
-.terremoto input[type=email],
-.terremoto input[type=number],
-.terremoto input[type=email],
-.terremoto input[type=tel],
-.terremoto input[type=file],
-.terremoto input[type=url],
+.terremoto input,
 .terremoto select,
 .terremoto textarea,
 .terremoto button[type="submit"] {
@@ -63,13 +57,7 @@ main {
     font-weight: 400;
 }
 
-.terremoto input[type=text],
-.terremoto input[type=email],
-.terremoto input[type=number],
-.terremoto input[type=email],
-.terremoto input[type=tel],
-.terremoto input[type=file],
-.terremoto input[type=url],
+.terremoto input,
 .terremoto select,
 .terremoto textarea {
     width: 100%;
@@ -80,13 +68,7 @@ main {
 
 }
 
-.terremoto input[type=text]:hover,
-.terremoto input[type=email]:hover,
-.terremoto input[type=number]:hover,
-.terremoto input[type=email]:hover,
-.terremoto input[type=tel]:hover,
-.terremoto input[type=file]:hover,
-.terremoto input[type=url]:hover,
+.terremoto input:hover,
 .terremoto select:hover,
 .terremoto textarea:hover {
     -webkit-transition: border-color 0.3s ease-in-out;
@@ -130,13 +112,7 @@ main {
     margin-top: 10px;
 }
 
-.terremoto input[type=text]:focus,
-.terremoto input[type=email]:focus,
-.terremoto input[type=number]:focus,
-.terremoto input[type=email]:focus,
-.terremoto input[type=tel]:focus,
-.terremoto input[type=file]:focus,
-.terremoto input[type=url]:focus,
+.terremoto input:focus,
 .terremoto select:focus,
 .terremoto textarea:focus {
     outline: 0;
@@ -174,7 +150,7 @@ main {
 .home {
     font-size: 1.4em;
     margin: 10px 0;
-    text-align:center;
+    text-align: center;
 }
 
 h4 a, .link {
@@ -202,11 +178,7 @@ h4 a:hover, .link:hover {
 }
 
 .start {
-    max-width:450px;
-    margin:2% auto;
+    max-width: 450px;
+    margin: 2% auto;
     word-wrap: break-word;
-}
-
-.terremoto label[for=check] {
-    margin-left:4px;
 }
