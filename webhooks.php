@@ -31,7 +31,7 @@
 		sleep(1);
 		$i++;
 		if ($i && ($i % 5) == 0)
-			error_log("Locked for $i seconds");
+			error_log("$type: Locked for $i seconds");
 	}
 	register_shutdown_function('cleanup', $type);
 
