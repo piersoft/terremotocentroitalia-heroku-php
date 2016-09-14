@@ -22,6 +22,10 @@
 	if (!$token || $_GET['token'] != $token || ($type != 'sync' && $type != 'issue')) {
 		exit;
 	}
+	ob_start();
+	var_dump($_POST);
+	error_log(ob_get_contents());
+	ob_end_clean();
 
 	$git_dir="/tmp/terremotocentro.$type";
 
