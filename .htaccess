@@ -4,23 +4,3 @@ RewriteEngine on
 RewriteCond %{HTTP:X-Forwarded-Proto} !https
 RewriteRule .* https://%{HTTP_HOST}%{REQUEST_URI} [R,L]
 SetEnv HTTPS "on"
-
-# Errori
-ErrorDocument 400 /segnalazioni/error/error.html
-ErrorDocument 401 /segnalazioni/error/error.html
-ErrorDocument 402 /segnalazioni/error/error.html
-ErrorDocument 403 /segnalazioni/error/error.html
-ErrorDocument 404 /segnalazioni/error/error.html
-ErrorDocument 500 /segnalazioni/error/error.html
-
-#Redriect
-RewriteRule ^segnalazioni/fondi$ segnalazioni/fondi.html [L]
-RewriteRule ^segnalazioni/donazioni$ segnalazioni/donazioni.html [L]
-RewriteRule ^segnalazioni/alloggi$ segnalazioni/alloggi.html [L]
-RewriteRule ^segnalazioni/notizie$ segnalazioni/notizie.html [L]
-RewriteRule ^segnalazioni/fabbisogni$ segnalazioni/fabbisogni.html [L]
-RewriteRule ^segnalazioni/contatti$ segnalazioni/contatti.html [L]
-RewriteRule ^segnalazioni/csv/contatti.csv$ segnalazioni/csv/php/contatti.csv [L]
-RewriteRule ^segnalazioni/csv/alloggi.csv$ segnalazioni/csv/php/alloggi.csv [L]
-RewriteRule ^segnalazioni/csv/donazioni.csv$ segnalazioni/csv/php/donazioni.csv [L]
-RewriteRule ^segnalazioni/csv/fabbisogni.csv$ segnalazioni/csv/php/fabbisogni.csv [L]
