@@ -38,6 +38,8 @@
     <link rel="stylesheet" href="https://joker-x.github.io/Leaflet.geoCSV/lib/MarkerCluster.Default.css" />
     <!--[if lte IE 8]> <link rel="stylesheet" href="https://joker-x.github.io/Leaflet.geoCSV/lib/MarkerCluster.Default.ie.css" /> <![endif]-->
     <script src="https://joker-x.github.io/Leaflet.geoCSV/lib/leaflet.markercluster-src.js"></script>
+      <script src="../src/leaflet-search.js"></script>
+    <link rel="stylesheet" href="../src/leaflet-search.css" />
 </head>
 <body>
 <main>
@@ -69,7 +71,22 @@
         },
         zoomControl: true
     }).setView([42.6297405,13.2896061], 16);
+map.on('move', function(event) {
+  var marker = event.target;
+  var position = map.getCenter();
+  var addr='http://nominatim.openstreetmap.org/reverse?format=json&email=piersoft2@gmail.com&lat='+position.lat+'&lon=' + position.lng+'&zoom=18&addressdetails=1';
+  marker = L.marker([position],16);
+//  addr_search(position.lat,position.lng);
+  $.getJSON(addr, function(data) {
+    var indirizzo=data.display_name;
+  document.getElementById("us3-address").value = indirizzo;
+  document.getElementById("us3-lat").value = position.lat;
+  document.getElementById("us3-lon").value = position.lng;
+  console.log(position);
+      //  map.setView([position.lat,position.lng],16, {animate: true});
 
+    });
+  });
     var osm=L.tileLayer('https://{s}.tile.openstreetmap.fr/hot/{z}/{x}/{y}.png', {maxZoom: 19, attribution: '&copy; <a href="http://www.openstreetmap.org/copyright">OpenStreetMap</a>, Tiles <a href="http://hot.openstreetmap.org/" target="_blank">Humanitarian OpenStreetMap Team</a> powered by @piersoft'}).addTo(map);
     var esi = L.tileLayer.wms("http://mapwarper.net/maps/wms/15512?request=GetCapabilities&service=WMS&version=1.1.1?", {
         layers: 'rv1',
@@ -85,7 +102,7 @@
         iconSize: [32,32]
     });
 
-
+/*
     var marker = L.marker([42.6297405,13.2896061],
             {draggable: true, icon:myIcon}   );
     marker.on('dragend', function(event){
@@ -102,7 +119,7 @@
     });
     map.addLayer(marker);
 
-
+*/
     var layerControl = new L.Control.Layers({
         'OSM Humanitarian': osm,
         'Satellite pre terremoto': realvista,
